@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+{% include 'process/about.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+         body{
+          background-color:#A9A9A9;
+         }
+        .container h2{
+        padding-left:600px;
+        margin-bottom:60px;
+        font-weight:bold;
+        font-size:30px;
+        color:green;
+        }
+    </style>
+</head>
+<body>
+{% block body %}
+<div class="container" style="margin-top:30px">
+   <h2 class="text-center">Biography</h2>
+   <br>
+   <table style="width:90%">
+       <tr>
+           <th>Book ID</th>
+           <th>Name</th>
+           <th>Author</th>
+           <th>Amount</th>
+           <th>Price</th>
+       </tr>
+       <tr>
+           <td>101</td>
+           <td>Radioactive</td>
+           <td>Marie & Pierre Curie</td>
+           <td>10</td>
+           <td>300</td>
+
+       </tr>
+       <tr>
+           <td>102</td>
+           <td>Long Walk to Freedom</td>
+           <td>Nelson Mandela</td>
+           <td>10</td>
+           <td>300</td>
+       </tr>
+       <tr>
+           <td>103</td>
+           <td>The Unfinished Memories</td>
+           <td>Sheikh Mujibur Rahman</td>
+           <td>10</td>
+           <td>300</td>
+       </tr>
+       <tr>
+           <td>104</td>
+           <td>Mein Kampf</td>
+           <td>Adolf Hitler</td>
+           <td>10</td>
+           <td>250</td>
+       </tr>
+   </table>
+</div>
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+{% include 'process/about.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+         body{
+          background-color:#A9A9A9;
+         }
+        .container h2{
+        padding-left:500px;
+        margin-bottom:60px;
+        font-weight:bold;
+        font-size:30px;
+        color:green;
+        }
+    </style>
+</head>
+<body>
+{% block body %}
+<div class="container" style="margin-top:30px">
+   <h2 class="text-center">Mystery & Thriller</h2>
+   <br>
+   <table style="width:90%">
+       <tr>
+           <th>Book ID</th>
+           <th>Name</th>
+           <th>Author</th>
+           <th>Amount</th>
+           <th>Price</th>
+       </tr>
+       <tr>
+           <td>301</td>
+           <td>The Stand </td>
+           <td>Stephen King</td>
+           <td>10</td>
+           <td>200</td>
+
+       </tr>
+       <tr>
+           <td>302</td>
+           <td>House of Leaves</td>
+           <td>Mark Z.Danielewski</td>
+           <td>10</td>
+           <td>250</td>
+       </tr>
+       <tr>
+           <td>303</td>
+           <td>The Deep</td>
+           <td>Alma Katsu</td>
+           <td>10</td>
+           <td>150</td>
+       </tr>
+       <tr>
+           <td>304</td>
+           <td>If It Bleeds</td>
+           <td>Stephen King</td>
+           <td>10</td>
+           <td>150</td>
+       </tr>
+   </table>
+</div>
+{% endblock %}
+</body>
+</html>

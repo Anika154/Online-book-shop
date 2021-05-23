@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+{% include 'process/about.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+         body{
+          background-color:#A9A9A9;
+         }
+        .container h2{
+        padding-left:600px;
+        margin-bottom:60px;
+        font-weight:bold;
+        font-size:30px;
+        color:green;
+        }
+        </style>
+</head>
+<body>
+{% block body %}
+<div class="container" style="margin-top:30px">
+   <h2 class="text-center">Romance</h2>
+   <br>
+   <table style="width:90%">
+       <tr>
+           <th>Book ID</th>
+           <th>Name</th>
+           <th>Author</th>
+           <th>Amount</th>
+           <th>Price</th>
+       </tr>
+       <tr>
+           <td>401</td>
+           <td>Fault in our starts</td>
+           <td>John Green</td>
+           <td>10</td>
+           <td>200</td>
+
+       </tr>
+       <tr>
+           <td>402</td>
+           <td>A sun is also a Star</td>
+           <td>Nicola Yoon</td>
+           <td>10</td>
+           <td>150</td>
+       </tr>
+       <tr>
+           <td>403</td>
+           <td>Moyurakkhi</td>
+           <td>Humayun</td>
+           <td>10</td>
+           <td>200</td>
+       </tr>
+       <tr>
+           <td>404</td>
+           <td>Parineeta</td>
+           <td>Sarat Chandra</td>
+           <td>10</td>
+           <td>300</td>
+       </tr>
+   </table>
+</div>
+{% endblock %}
+</body>
+</html>

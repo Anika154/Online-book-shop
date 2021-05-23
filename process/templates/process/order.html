@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+{% include 'process/about.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .container{
+        width: 280px;
+        position: absolute;
+        top: 10%;
+        left: 40%;
+        transform: translate(-5%,-5%);
+        }
+        .container h1{
+        float:left;
+        font-size: 35px;
+        border-bottom: 5px solid #4caf50;
+        margin-bottom: 30px;
+        padding:5px;
+        }
+        .form-control1{
+        width:120px;
+        font-size:20px;
+        font-weight:bold;
+        padding: 3px;
+        margin: 5px ;
+        border-bottom: 1px solid #4caf50;
+        color: black;
+        }
+        .form-controlbtn{
+        width:110%;
+        font-size:18px;
+        padding: 2px;
+        margin-top: 5px ;
+        margin-right: 30px ;
+        margin-left: 10px ;
+        border-bottom: 3px solid #4caf50;
+        background-color: #C0C0C0;
+        }
+        .flex{
+        display:flex;
+        justify-content:space-between;
+
+
+        }
+
+
+
+    </style>
+</head>
+<body>
+{% block body %}
+{% load static %}
+<img src="{% get_media_prefix %}order.jpg " alt="order.jpg" height="541px" width="1365px"/>
+<div class="container" style="margin-top:50px">
+    <h1 class="text-center">Order</h1>
+    <br><br><br><br><br><br>
+    <form method="POST">
+        {% csrf_token %}
+        <div class="box">
+            <div class="flex">
+                <label>Customer Name</label>
+                <input type="text" class="form-control1" name="name" required><br><br>
+            </div>
+            <div class="flex">
+                <label>Book Name</label>
+                <div>
+                    <input type="text" class="form-control1" name="book" required>
+                    <select name="book" class="form-control">
+                        {% for i in book %}
+                        <option value="{{i.name}}">{{i.name}}</option>
+                        {% endfor %}
+                    </select><br><br>
+                </div>
+            </div>
+            <div class="flex">
+                <label>Address</label>
+                <textarea class="form-control1" name="address" required></textarea><br><br>
+            </div>
+            <div class="flex">
+                <label>Price</label>
+                <div>
+                    <input type="text" class="form-control1" name="price" required>
+                    <select name="book" class="form-control">
+                        {% for i in book %}
+                        <option value="{{i.price}}">{{i.price}}</option>
+                        {% endfor %}
+                    </select><br><br>
+                </div>
+            </div>
+            <div class="flex">
+                <label>Date</label>
+                <input type="date" class="form-control1" name="date" required><br><br>
+            </div>
+            <div class="flex">
+                <label>Time</label>
+                <input type="time" class="form-control1" name="time" required>
+                <br>
+            </div>
+            <input type="submit" value="Submit" class="form-controlbtn">
+        </div>
+    </form>
+</div>
+
+{% ifequal error "no" %}
+<script>
+    alert('Order Saved Successfully');
+    window.location=('{% url 'review' %}');
+
+
+
+
+</script>
+{% endifequal %}
+{% ifequal error "no" %}
+<script>
+    alert('Something went wrong ,Try Again');
+
+
+
+
+</script>
+{% endifequal %}
+{% endblock %}
+</body>
+</html>

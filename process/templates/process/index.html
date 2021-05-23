@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+{% include 'process/about.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+         body{
+       background-color:#A9A9A9;
+        }
+        .container h2{
+        padding-left:500px;
+        font-weight:bold;
+        font-size:40px;
+        color:green;
+        }
+        .second{
+        margin-top:60px;
+        padding-left:100px;
+        padding-right:5px;
+        font-size:20px;
+        display: flex;
+        justify-content: space-between;
+         color: green;
+        }
+        .category1{
+        padding-left:1px;
+        padding-right:70px;
+        }
+        .category2{
+        padding-left:1px;
+        padding-right:5px;
+        }
+        .category3{
+        padding-left:1px;
+        padding-right:5px;
+        }
+        .category4{
+        padding-left:1px;
+        padding-right:5px;
+        }
+    </style>
+</head>
+<body>
+{% block body %}
+<div class="container" style="margin-top:60px">
+<h2 class="text-center">Categories of Books:</h2>
+    <ul class="second">
+         <li class="category1"><a class="bio" href="{% url 'biography' %}">Biography</a></li>
+         <li class="category2"><a class="fic" href="{% url 'fiction' %}">Literature & Fiction</a></li>
+         <li class="category3"><a class="thril" href="{% url 'thriller' %}">Thriller</a></li>
+         <li class="category4"><a class="rom" href="{% url 'romance' %}">Romance</a></li>
+    </ul>
+</div>
+
+{% endblock %}
+</body>
+</html>

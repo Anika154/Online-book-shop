@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+{% include 'process/about.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Form</title>
+    <style>
+        .container{
+        width: 280px;
+        position: absolute;
+        top: 10%;
+        left: 40%;
+        transform: translate(-5%,-5%);
+        }
+        .container h1{
+        float:left;
+        font-size: 35px;
+        border-bottom: 6px solid #4caf50;
+        margin-bottom: 50px;
+        padding:13px;
+        color: white;
+        }
+        .form-control1{
+        width:50%;
+        font-size:20px;
+        font-weight:bold;
+        padding: 3px;
+        margin: 5px ;
+        border-bottom: 1px solid #4caf50;
+        color: white;
+        }
+        .form-control2{
+        width:50%;
+        font-size:20px;
+        padding: 4px;
+        margin-top: 10px ;
+        margin-right: 10px ;
+        margin-left: 30px ;
+        border-bottom: 1px solid #4caf50;
+
+        }
+        .form-controlbtn{
+        width:95%;
+        font-size:18px;
+        padding: 8px;
+        margin-top: 15px ;
+        margin-right: 30px ;
+        margin-left: 5px ;
+        border-bottom: 3px solid #4caf50;
+        background-color: #C0C0C0;
+        }
+        .a{
+        color: white;
+        }
+        .b{
+        color: white;
+        }
+
+    </style>
+
+</head>
+<body>
+{% block body %}
+{% load static %}
+<img src="{% get_media_prefix %}book.jpg " alt="book.jpg" height="541px" width="1365px"/>
+{% ifequal error "no" %}
+<script>
+    alert('Logged In Successfuly');
+    window.location=('{% url 'home' %}');
+</script>
+{% endifequal %}
+
+ {% ifequal error "yes" %}
+<script>
+    alert('Invalid Login, Try Again');
+</script>
+{% endifequal %}
+ 
+
+<div class="container" style="margin-top:50px">
+      <h1 class="text-center">User Login</h1>
+
+    <form method="POST">
+       {% csrf_token %}
+        <div class="box">
+        <label class="a">Name</label>
+        <input type="text" class="form-control1" name="uname">
+        <label class="b">Password</label>
+        <input type="password" class="form-control2" name="pwd">
+            <br>
+        <input type="submit" value="Login" class="form-controlbtn">
+        </div>
+   </form>
+</div>
+
+{% endblock %}
+</body>
+</html>
